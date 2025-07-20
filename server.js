@@ -12,7 +12,7 @@ const server = http.createServer(app);
 // הגדרת socket.io
 const io = new Server(server, {
   cors: {
-    origin: "https://chat-client-demo.vercel.app".trim(), // בשלב מתקדם - להחליף לדומיין שלך
+    origin: "https://chat-client-demo.vercel.app", // בשלב מתקדם - להחליף לדומיין שלך
     methods: ["GET", "POST"],
   },
 });
@@ -42,7 +42,7 @@ io.on("connection", (socket) => {
 });
 
 // הרצת השרת
-const PORT = process.env.PORT || 6000;
+const PORT = process.env.PORT;
 server.listen(PORT, "0.0.0.0", () => {
   console.log(`🚀 Server listening on port ${PORT}`);
 });
