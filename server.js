@@ -12,7 +12,8 @@ const server = http.createServer(app);
 // הגדרת socket.io
 const io = new Server(server, {
   cors: {
-    origin: "*", // בשלב מתקדם - להחליף לדומיין שלך
+    origin:
+      "https://chat-server-demo-production-95bf.up.railway.app:5500".trim(), // בשלב מתקדם - להחליף לדומיין שלך
     methods: ["GET", "POST"],
   },
 });
@@ -43,6 +44,6 @@ io.on("connection", (socket) => {
 
 // הרצת השרת
 const PORT = process.env.PORT || 6000;
-server.listen(PORT, () => {
+server.listen(PORT, "0.0.0.0", () => {
   console.log(`🚀 Server listening on port ${PORT}`);
 });
