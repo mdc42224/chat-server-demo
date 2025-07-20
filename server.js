@@ -12,8 +12,7 @@ const server = http.createServer(app);
 // הגדרת socket.io
 const io = new Server(server, {
   cors: {
-    origin:
-      "https://chat-server-demo-production-95bf.up.railway.app:5500".trim(), // בשלב מתקדם - להחליף לדומיין שלך
+    origin: "https://chat-client-demo.vercel.app".trim(), // בשלב מתקדם - להחליף לדומיין שלך
     methods: ["GET", "POST"],
   },
 });
